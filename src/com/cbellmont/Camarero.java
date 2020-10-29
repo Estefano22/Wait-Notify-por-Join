@@ -6,7 +6,7 @@ public class Camarero extends Thread {
     public void run() {
         try {
             while (true) {
-            }
+                {
             prepararComanda();
                 }
             }
