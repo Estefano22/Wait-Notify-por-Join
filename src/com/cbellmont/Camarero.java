@@ -6,10 +6,8 @@ public class Camarero extends Thread {
     public void run() {
         try {
             while (true) {
-                synchronized (Main.list){
-                    Main.list.wait();
-                    prepararComanda();
-                    Main.list.notify();
+            }
+            prepararComanda();
                 }
             }
         } catch (InterruptedException e) {
@@ -17,7 +15,7 @@ public class Camarero extends Thread {
         }
     }
 
-    private void prepararComanda() throws InterruptedException {
+    protected void prepararComanda() throws InterruptedException {
         System.out.println("Camarero - Si he llegado aqui es porque el cliente ha pedido comida. Debo llevarla");
         Main.list.add("Zumo");
         sleep(1000);
